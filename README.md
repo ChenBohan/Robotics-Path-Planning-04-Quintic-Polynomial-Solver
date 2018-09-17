@@ -7,6 +7,12 @@ Calculate the Jerk Minimizing Trajectory that connects the initial state to the 
 
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/Jerk%20Minimizing%20Trajectories.png" width = "70%" height = "70%" div align=center />
 
+Our problem is to find a function s of t that minimize the total jerk.
+
+We find that all the time derivatives of s are further six and more have to be zero in order for s to be jerk minimize.
+
+All minimum jerk trajectories can be repersented as a fifth order polynomial like that.
+
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/Polynomial%20solver.png" width = "70%" height = "70%" div align=center />
 
 INPUTS:
