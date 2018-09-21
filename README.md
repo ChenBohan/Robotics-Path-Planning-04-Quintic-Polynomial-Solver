@@ -1,7 +1,8 @@
 # Robotics-Path-Planning-05-Quintic-Polynomial-Solver
-Udacity Self-Driving Car Engineer Nanodegree: Quintic Polynomial Solver.
+Udacity Self-Driving Car Engineer Nanodegree: Quintic Polynomial Solver. 
+& Paper 'Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame'
 
-## Definition
+## Implement the Quintic Polynomial Solver
 
 Calculate the Jerk Minimizing Trajectory that connects the initial state to the final state in time T.
 
@@ -55,3 +56,9 @@ vector<double> JMT(vector< double> start, vector <double> end, double T)
     return result;
 }
 ```
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/feasibility.png" width = "70%" height = "70%" div align=center />
+
+## Paper 'Optimal Trajectory Generation for Dynamic Street Scenarios in a Frene´t Frame'
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
