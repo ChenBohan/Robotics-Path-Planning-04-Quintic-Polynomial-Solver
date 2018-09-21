@@ -61,4 +61,30 @@ vector<double> JMT(vector< double> start, vector <double> end, double T)
 
 ## Paper 'Optimal Trajectory Generation for Dynamic Street Scenarios in a Frene´t Frame'
 
+- Related work
+	-  [11], [19], [2], [4]: fail to model the inherent unpredictability of other traffic, and the resulting uncertainty, given that they **rely on precise prediction** of other traffic participant’s motions over a long time period.
+	- [16], [1], [7]: The trajectories are represented parametrically. A finite set of trajectories is computed, typically by forward integration of the differential equations that describe vehicle dynamics.While this reduces the solution space and allows for fast planning, it may introduce **suboptimality**.
+	- [9]: a tree of trajectories is sampled by simulating the closed loop system using the **rapidly exploring random tree algorithm** [10].
+	- [17]: in a similar spirit to our method but only considers the free problem that is **not constrained by obstacle**.
+	- We propose a local method, which is capable of realizing high-level decisions made by an upstream, behavioral layer (long-term objectives) and also performs (reactive) emergency obstacle avoidance in unexpected critical situations.
+- Optimal control approach
+	- system inputs or curvature to be **polynomials**.
+	- cost functional is compliance with **Bellman’s principle** of optimality.
+	- making the best compromise between the **jerk** and the **time**.
+	- not limited to a certain function class, the problem becomes highly **complicated** and can be solved numerically at best.
+	
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/overshoot.png" width = "50%" height = "50%" div align=center />
+
+- Motion planning in the Frenet Frame
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/fenet.png" width = "50%" height = "50%" div align=center />
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/formula3.png" width = "40%" height = "40%" div align=center />
+
+Total jerk:
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/jerk1.png" width = "20%" height = "20%" div align=center />
+
+Cost function:
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/cost1.png" width = "20%" height = "20%" div align=center />
+
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
