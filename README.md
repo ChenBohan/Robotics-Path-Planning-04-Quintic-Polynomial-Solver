@@ -88,3 +88,24 @@ Cost function:
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/cost1.png" width = "20%" height = "20%" div align=center />
 
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
+
+A quintic polynomial through the same points and the same time interval will always lead to a smaller cost.
+
+- Generation of lateral movement
+	- High speed trajectories
+		- at high speed, d(t) and s(t) can be chosen independently.
+		- cost function: g(T)=T, h(d1)=d1^2.
+		- process:
+			1. calculate its coefficients and T minimizing.
+			2. check it against collision.
+			3. if not, check and find the second best and collision-free trajectory.
+	- Low speed trajectories
+		- at low speed, we must consider the non-holonomic property (invalid curvatures) of the car.
+		- cost function: see in the paper.
+- Generation of longitudianal movement
+	- Following
+		- safe distance (constant time gap law)
+	- Merging
+	- Stopping
+	- Velocity keeping
+		- 
