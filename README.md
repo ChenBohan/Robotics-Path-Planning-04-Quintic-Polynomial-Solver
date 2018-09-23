@@ -61,6 +61,13 @@ vector<double> JMT(vector< double> start, vector <double> end, double T)
 
 ## Paper 'Optimal Trajectory Generation for Dynamic Street Scenarios in a Frene´t Frame'
 
+- The paper discusses some topics like:
+	- Cost Functions.
+	- Differences between high speed and low speed trajectory generation.
+	- Implementation of specific maneuvers relevant to highway driving like following, merging, and velocity keeping.
+	- How to combining lateral and longitudinal trajectories.
+	- A derivation of the transformation from Frenet coordinates to global coordinates (in the appendix).
+
 - Related work
 	-  [11], [19], [2], [4]: fail to model the inherent unpredictability of other traffic, and the resulting uncertainty, given that they **rely on precise prediction** of other traffic participant’s motions over a long time period.
 	- [16], [1], [7]: The trajectories are represented parametrically. A finite set of trajectories is computed, typically by forward integration of the differential equations that describe vehicle dynamics.While this reduces the solution space and allows for fast planning, it may introduce **suboptimality**.
@@ -87,8 +94,6 @@ Total jerk:
 Cost function:
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/cost1.png" width = "20%" height = "20%" div align=center />
 
-<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
-
 A quintic polynomial through the same points and the same time interval will always lead to a smaller cost.
 
 - Generation of lateral movement
@@ -108,4 +113,5 @@ A quintic polynomial through the same points and the same time interval will alw
 	- Merging
 	- Stopping
 	- Velocity keeping
-		- 
+		
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
