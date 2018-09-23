@@ -68,12 +68,20 @@ vector<double> JMT(vector< double> start, vector <double> end, double T)
 	- How to combining lateral and longitudinal trajectories.
 	- A derivation of the transformation from Frenet coordinates to global coordinates (in the appendix).
 
+- Abstract
+	- semi-reactive trajectory generation method
+	- be tightly integrated into the behavioral layer
+	- realize long-term objectives (such as velocity keeping, merging, following, stopping)
+	- combine with a reactive collision avoidance
+	- Frenét-Frame
+
 - Related work
 	-  [11], [19], [2], [4]: fail to model the inherent unpredictability of other traffic, and the resulting uncertainty, given that they **rely on precise prediction** of other traffic participant’s motions over a long time period.
 	- [16], [1], [7]: The trajectories are represented parametrically. A finite set of trajectories is computed, typically by forward integration of the differential equations that describe vehicle dynamics.While this reduces the solution space and allows for fast planning, it may introduce **suboptimality**.
 	- [9]: a tree of trajectories is sampled by simulating the closed loop system using the **rapidly exploring random tree algorithm** [10].
 	- [17]: in a similar spirit to our method but only considers the free problem that is **not constrained by obstacle**.
-	- We propose a local method, which is capable of realizing high-level decisions made by an upstream, behavioral layer (long-term objectives) and also performs (reactive) emergency obstacle avoidance in unexpected critical situations.
+	- We propose a **local method**, which is capable of realizing **high-level decisions** made by an upstream, **behavioral layer** (long-term objectives) and also **performs (reactive) emergency obstacle avoidance** in unexpected critical situations.
+	
 - Optimal control approach
 	- system inputs or curvature to be **polynomials**.
 	- cost functional is compliance with **Bellman’s principle** of optimality.
@@ -113,5 +121,20 @@ A quintic polynomial through the same points and the same time interval will alw
 	- Merging
 	- Stopping
 	- Velocity keeping
+- Combining lateral and longitudinal trajectories
+	- check aginst outsized acceleration values first.
+	- derive higher order infomation (heading, curvature, velocity, acceleration)
+	- calculate the conjoint cost: Cost_total = w_lat * Cost_lat + w_lon * Cost_lon
+	- for collison dectection: we add a certain safety distance to the size of our car on each side.
 		
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/overshoot.png" width = "50%" height = "50%" div align=center />
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/paper_pic1.png" width = "50%" height = "50%" div align=center />
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/paper_pic2.png" width = "50%" height = "50%" div align=center />
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/paper_pic3.png" width = "50%" height = "50%" div align=center />
+
+<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/paper_pic_result.png" width = "50%" height = "50%" div align=center />
+
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-05-Quintic-Polynomial-Solver/blob/master/readme_img/animation.gif" width = "70%" height = "70%" div align=center />
