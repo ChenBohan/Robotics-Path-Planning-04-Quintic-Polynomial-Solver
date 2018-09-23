@@ -1,4 +1,4 @@
-# Robotics-Path-Planning-05-Quintic-Polynomial-Solver
+# Robotics-Path-Planning-04-Quintic-Polynomial-Solver
 Udacity Self-Driving Car Engineer Nanodegree: Quintic Polynomial Solver. 
 & Paper 'Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame'
 
