@@ -126,8 +126,6 @@ A quintic polynomial through the same points and the same time interval will alw
 	- derive higher order infomation (heading, curvature, velocity, acceleration)
 	- calculate the conjoint cost: Cost_total = w_lat * Cost_lat + w_lon * Cost_lon
 	- for collison dectection: we add a certain safety distance to the size of our car on each side.
-		
-<img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/overshoot.png" width = "50%" height = "50%" div align=center />
 
 <img src="https://github.com/ChenBohan/Robotics-Path-Planning-04-Quintic-Polynomial-Solver/blob/master/readme_img/paper_pic1.png" width = "50%" height = "50%" div align=center />
 
